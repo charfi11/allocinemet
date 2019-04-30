@@ -1,0 +1,199 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.container-fluid {
+  padding: 0px;
+  margin: 0px;
+}
+
+#Navbar{
+    display: flex;
+    flex-direction:row;
+    justify-content:space-around;
+   width:70%;
+   margin:auto;
+   font-weight: bolder;
+   font-family: 'Poiret One', cursive;
+   animation-name: fadeInDown;
+   animation-duration: 1s;
+}
+
+#link_nav{
+    position: absolute;
+    z-index:99;
+    display:flex;
+   flex-direction: row;
+   padding-left:3%;
+   padding-top:10px;
+   padding-bottom:10px;
+   background-color:transparent;
+   font-size: 1.8em;
+}
+
+#link_nav a{
+    text-decoration: none;
+    color: #DB1313;
+    text-shadow: 3px 6px 4px black;
+}
+
+#link_nav a:hover{
+    color: white;
+    transition: 400ms;
+    text-shadow: 3px 2px 3px black;
+}
+
+/*animate Navbar*/
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+
+.m-nav-toggle {
+  width: 30px;
+  height: 23px;
+  margin-left: 60%;
+  display: none;
+  align-items: center;
+  cursor: pointer;
+  z-index: 100;
+}
+
+span.m-toggle-icon,
+span.m-toggle-icon:before,
+span.m-toggle-icon:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  position: relative;
+}
+
+span.m-toggle-icon:before {
+  top: 10px;
+}
+
+span.m-toggle-icon:after {
+  top: -13px;
+}
+
+#Navbar.is-open {
+  transform: translateY(0);
+}
+
+.slid1 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-caption {
+  left: 0%;
+  bottom: 0%;
+  opacity: 0.5;
+  background-color: grey;
+  font-size: 4em;
+  width: 100%;
+}
+
+.slid2 {
+  height: 100%;
+  width: 100%;
+}
+
+.slid3 {
+  height: 100%;
+  width: 100%;
+}
+
+.parallax-window {
+    min-height: 300px;
+    background: transparent;
+}
+
+.contain {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.contain p {
+ width: 30%;
+}
+
+.titrecinemet {
+  text-align: center;
+  font-size: 4em;
+  color: #DB1313;
+  text-shadow: 50px 1px 1px white;
+}
+
+.titrecinemet:hover {
+  transition: 800ms;
+  opacity: 0.8;
+  text-shadow: 2px 1px 1px black;
+  }
+
+.imgcinemet {
+  width: 100%;
+  height: 100%;
+  box-shadow: 50px -14px #DB1313;
+}
+
+.imgcinemet:hover {
+  transition: 500ms;
+  box-shadow: 2px 2px black;
+  opacity: 0.7;
+  border-radius: 2%;
+}
+
+/*------------------------------
+----pour le footer------
+-------------------------------*/
+#footer {
+    background-color: #DB1313;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  #footer a {
+    text-decoration: none;
+    color: white;
+  }
+
+  #footer a:hover {
+    text-decoration: none;
+    color: white;
+    text-shadow: 3px 3px 10px black;
+  }
