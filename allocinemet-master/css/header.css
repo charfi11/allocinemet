@@ -1,0 +1,32 @@
+#Navbar{
+   display: flex;
+   flex-direction:row;
+   justify-content:space-around;
+   width:60%;
+   margin:auto;
+   font-weight: bolder;
+   font-family: 'Poiret One', cursive;
+   animation-name: fadeInDown;
+   animation-duration: 1s;
+}
+
+#link_nav{
+   position: absolute;
+   z-index:99;
+   display:flex;
+   flex-direction: row;
+   background-color:transparent;
+   font-size: 1.4em;
+}
+
+#link_nav a{
+    text-decoration: none;
+    color: white;
+    text-shadow: 2px 3px 2px black;
+}
+
+#link_nav a:hover{
+    color: #DB1313;
+    transition: 150ms;
+    text-shadow: 1px 2px 5px black;
+}

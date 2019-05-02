@@ -1,44 +1,65 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
 }
 
 /*------------------------------
 ----pour le footer------
 -------------------------------*/
-#footer {
-  background-color: #c7c3c3;
-  font-family: 'Roboto Condensed', sans-serif;
-  border-block-start: solid 5px #47474773;
-}
-
-#footer a {
+footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: #BD2424;
   color: white;
-
-}
-
-
-/*----------------------------------
-----------media query----------------
-----------------------------------*/
-
-@media only screen and (max-width: 1199px) {
-  #footer .in {
-    display: none;
+  text-shadow: 2px 3px 2px black;
+  border-bottom: 1px solid black;
+  height: 12em;
   }
-}
 
-@media only screen and (max-width: 991px) {
-
-}
-
-@media only screen and (max-width: 767px) {
-  #footer .in {
-    display: initial;
+  footer a {
+    color: white;
+    text-shadow: 2px 3px 2px black;
   }
-}
 
-@media only screen and (max-width: 576px) {
+  footer a:hover {
+    transition: 150ms;
+    color: white;
+    text-shadow: 1px 2px 5px black;
+  }
 
+  .footer1 {
+    flex-direction: column;
+    width: 25%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .footer_part2 {
+    flex-direction: column;
+    width: 20%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .footer_part2 h5 {
+    height: 2em;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .footer_part3 {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .footer_part3 li {
+    list-style-type: none;
+  }
+
+  .footer2 {
+    background-color: #BD2424;
+  }
+
+  .footer2 li{
+    display: inline;
   }

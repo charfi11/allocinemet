@@ -22,7 +22,7 @@
             <label for="DATE_DE_SORTIE">DATE_DE_SORTIE</label> : <input type="date" name="DATE_DE_SORTIE" id="DATE_DE_SORTIE"  /><br />
             <label for="AFFICHE">AFFICHE</label> :  <input type="text" name="AFFICHE" id="AFFICHE" /><br />
             <label for="GENRE">GENRE</label> :  <input type="text" name="GENRE" id="GENRE" /><br />
-
+            <label for="RESUME">RESUME</label> :  <input type="text" name="RESUME" id="RESUME" /><br />
             <input type="submit" value="Envoyer" />
         </p>
         </form>
@@ -39,8 +39,8 @@ catch(Exception $e)
 }
 
 // Insertion du message à l'aide d'une requête préparée
-$req = $bdd->prepare('INSERT INTO FILM (TITRE, DATE_DE_SORTIE, GENRE, AFFICHE) VALUES(?, ?, ?, ?)');
-$req->execute(array($_POST['TITRE'], $_POST['DATE_DE_SORTIE'], $_POST['GENRE'], $_POST['AFFICHE']));
+$req = $bdd->prepare('INSERT INTO FILM (TITRE, DATE_DE_SORTIE, GENRE, AFFICHE, RESUME, BANDE_ANNONCE) VALUES(?, ?, ?, ?,?, ?)');
+$req->execute(array($_POST['TITRE'], $_POST['DATE_DE_SORTIE'], $_POST['GENRE'], $_POST['AFFICHE'], $_POST['RESUME'], $_POST['BANDE_ANNONCE']));
 
 ?>
     </body>
