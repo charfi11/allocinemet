@@ -2,9 +2,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    text-align: center;
-    word-spacing: 0.4em;
-    letter-spacing: 0.05em;
 }
 
 main {
@@ -28,6 +25,10 @@ header {
 
 ul li {
   list-style-type: none;
+}
+
+h1, h2, h3 {
+  font-family: 'Poiret One', cursive;
 }
 
 #Navbar{
@@ -66,16 +67,14 @@ ul li {
 
 .affiche {
   display:flex;
-  align-items: center;
-  flex-direction: column;
-  height: 30em;
-
+  height: 35em;
+  text-align: center;
 }
 
 .affiche a {
+  align-items: center;
   margin-top: auto;
   margin-bottom: auto;
-  padding: 0px;
 }
 
 .affiche img {
@@ -135,6 +134,7 @@ ul li {
   flex-direction: column;
   height: 14em;
   background-color: #BD2424;
+  text-align: center;
 }
 
 .resume:hover {

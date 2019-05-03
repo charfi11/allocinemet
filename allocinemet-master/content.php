@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Content</title>
 
+  <!--fontawesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!--Animate CSS -->
@@ -22,16 +24,8 @@
 <body>
   <!--pour se connecter à la bdd-->
   <?php
-  try
-  {
-  	// On se connecte à MySQL
-  	$bdd = new PDO('mysql:host=localhost;dbname=FILM;charset=utf8', 'charfi11', 'pioupiou');
-  }
-  catch(Exception $e)
-  {
-  	// En cas d'erreur, on affiche un message et on arrête tout
-          die('Erreur : '.$e->getMessage());
-  }
+
+  include('connect_bdd.php');
 
   $req = "SELECT * FROM FILM WHERE ID_film=" .$_GET["id"];
 
@@ -104,57 +98,46 @@
 
   <footer>
     <div class="footer1">
-          <h5><a href="index.html"> AllocineMET</a></h5>
+          <h3><a href="index.html"> ALLOCINE<strong>MET</strong></a></h3>
           <p>Lorem ipsum dolor sit amet, consectetur ad Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           </div>
             <div class="footer_part2">
-          <h5>Films à l'affiche</h5>
-            <a href="#">Film 1</a>
-            <a href="#">Film 2</a>
-            <br>
-          <h5>Liens utiles</h5>
-          <a href="">Lorem Ipsum</a>
-            <a href="">Lorem Ipsum</a>
+            <p><a href="#">Film 1</a></p>
+            <p><a href="#">Film 2</a></p>
+          </div>
+          <div class="footer_part2_1">
+          <p><a href="">Lorem Ipsum</a></p>
+            <p><a href="">Lorem Ipsum</a></p>
           </div>
           <div class="footer_part3">
-          <h5><a href="contact.php">Contact</a></h5>
-          <ul>
-          <li>
-            AllocineMET</li>
-          <li>
-            www.AllocineMET.net</li>
-          <li>
-            TEL +33 6 52 50 05 35</li>
-          <li>
-            TEL +33 6 87 26 69 70</li>
-          <li>© 2019 Copyright: AllocineMET
+          <p><a href="contact.php">Restez connectés</a></p>
+              <a href="">
+                <i class="fab fa-facebook-f fa-1x" style="color:white;"></i>
+              </a>
+            </li>
+            <li>
+              <a href="">
+              <i class="fab fa-twitter fa-1x" style="color:white;"></i>
+              </a>
+            </li>
+            <li>
+              <a>
+                <li>
+                  <a href="">
+                  <i class="fab fa-instagram  fa-1x" style="color:white;"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                  <i class="fab fa-youtube  fa-1x" style="color:white;"></i>
+                  </a>
+                </li>
           </ul>
         </div>
       </footer>
         <div class="footer2">
-            <ul>
-              <li>
-                <a href="">
-                  <img src="img/facebook.png" title="facebook">
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <img src="img/twitter.png" title="twitter">
-                </a>
-              </li>
-              <li>
-                <a>
-                  <img src="img/github.png" title="github">
-                </a>
-              </li>
-              <li>
-                <ahref="">
-                  <img src="img/linkedin.png" title="linkedin">
-                </a>
-              </li>
-            </ul>
+              <p>© 2019 Copyright: AllocineMET</p>
           </div>
 
   <div><a id="cRetour" class="cInvisible" href="#haut"></a></div>
