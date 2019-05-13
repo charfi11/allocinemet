@@ -6,31 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>AllocineMet</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Poiret+One|Roboto+Condensed" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/carousel.css">
-  <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
 </head>
 
 <body>
   <header>
-    <nav class="fixed-top" id="link_nav">
-      <a href="index.html" class="mt-2" id="logo">
-        <h1>ALLOCINE<strong>MET</strong></h1>
-      </a>
-      <div id="Navbar">
-        <a href="allo_films.php">FILMS </a>
-        <a href="contact.html">CONTACT </a>
-        <a href="#">ACTEURS </a>
-        <a href="#">REALISATEURS </a>
-      </div>
-      <div class="m-nav-toggle">
-        <span class="m-toggle-icon"></span>
-    </nav>
+    <a href="index.html">
+      <h1>ALLOCINE<strong>MET</strong></h1>
+    </a>
+    <div class="entete">
+      <a href="allo_films.php">FILMS </a>
+      <a href="contact.html">CONTACT </a>
+      <a href="#">connexion/inscription</a>
+      <a href="#"><i class="fas fa-users"></i></a>
+    </div>
   </header>
   <main class="container-fluid">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -38,19 +31,16 @@
         <div class="carousel-item active">
           <img class="d-block w-100" src="img/Marvel.jpeg" alt="First slide">
           <div class="carousel-caption d-none d-md-block">
-            <p>blabla</p>
           </div>
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src="img/alita.jpe" alt="Second slide">
           <div class="carousel-caption d-none d-md-block">
-            <p>blabla</p>
           </div>
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src="img/dragon.jpeg" alt="Third slide">
           <div class="carousel-caption d-none d-md-block">
-            <p>blabla</p>
           </div>
         </div>
       </div>
@@ -65,9 +55,10 @@
     </div>
 
     <div class="Container2">
-      <h2 class="affiche_container">A L' AFFICHE</h2>
+      <h5 class="affiche_container">A L' AFFICHE</h5>
+      <hr>
       <ul class="Carousel2">
-        <li class="Items Front"><img src="img/endmar.jpg"></li>
+        <li class="Items Front"><img src="img/endmar.jpg"></a></li>
         <li class="Items Left"><img src="img/capmar.jpeg"></li>
         <li class="Items Left2"><img src="img/gard.jpg"></li>
         <li class="Items Right"><img src="img/js.jpg"></li>
@@ -75,26 +66,22 @@
       </ul>
     </div>
 
-    <div class="parallax-window" data-parallax="scroll" data-image-src="img/metro.jpg"></div>
+    <div class="parallax-window" data-parallax="scroll" data-image-src="img/cinem.jpg"></div>
 
-    <a href="#">
-      <h2 class="titrecinemet">ALLOCINE<strong>MET</strong></h2>
-    </a>
-    <br>
+    <h5 class="titrecinemet">#ALLOCINE<strong>MET</strong></h5>
     <div class="contain">
-      <a href="#"><img class="imgcinemet" src="img/metro.jpg"></a>
+      <a href="#"><img class="imgcinemet" src="img/m.jpg"></a>
       <p>Omitto iuris dictionem in libera civitate contra leges senatusque consulta; caedes relinquo; libidines praetereo,
         quarum acerbissimum extat indicium et ad insignem memoriam turpitudinis et paene ad iustum odium imperii nostri,
         nobilissimas virgines se in puteos abiecisse et morte voluntaria necessariam turpitudinem depulisse. Nec haec idcirco
         omitto, quod non gravissima sint, sed quia nunc sine teste dico.
-        Omitto iuris dictionem in libera civitate contra leges senatusque consulta; caedes relinquo; libidines praetereo,
       </p>
     </div>
     <br>
   </main>
   <footer>
     <div class="footer1">
-      <h3><a href="index.html"> ALLOCINE<strong>MET</strong></a></h3>
+      <h3><a href="index.php"> ALLOCINE<strong>MET</strong></a></h3>
       <p>Lorem ipsum dolor sit amet, consectetur ad Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>

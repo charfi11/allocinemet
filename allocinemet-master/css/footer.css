@@ -9,7 +9,7 @@
 footer {
   display: flex;
   justify-content: space-around;
-  background-color: #232323;
+  background-color: #1D1D1D;
   color: white;
   text-shadow: 2px 3px 2px black;
   height: 11em;
@@ -22,7 +22,7 @@ footer {
 
   footer a:hover {
     transition: 150ms;
-    color: #DB1313;
+    color:	#eeb422;
     text-shadow: 1px 2px 5px black;
   }
 
@@ -73,21 +73,23 @@ footer {
   }
 
   .footer_part3 i {
-    padding-left: 8%;
+    padding-left: 6%;
   }
 
   .footer2 {
     display: flex;
     justify-content: flex-end;
-    background-color: #232323;
+    background-color: #1D1D1D;
+    border-top: solid 1px grey;
   }
 
 .footer2 p {
   color: white;
-  width: 18%;
+  width: 20%;
+  padding-top: 1%;
 }
 
 .footer_part3 i:hover {
   transform: scale(1.5);
-  text-shadow: none;
+  text-shadow: 1px 1px 1px #eeb422;
 }
