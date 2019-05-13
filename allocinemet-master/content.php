@@ -55,24 +55,121 @@
     <p><?php echo $donnees['resume'];?>
     </p>
   </div>
+  <?php
+  }
+
+   $reponse->closeCursor();
+  ?>
     <!-- pour la partie récap d'infos et la bande annonce -->
 <div class="part_acteur_bo">
   <div class="part_act">
-              <h5>Réalisateur:</h5>
-              <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-              <h5 class="mb-1">Acteurs:</h5>
-              <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
+
+    <!-- boucle acteurs bdd -->
+
+              <h5>Acteurs:
+                <?php
+
+                include('connect_bdd.php');
+
+                $id = $_GET['id'];
+                $req = "SELECT * FROM FILM,ACTEUR,joue WHERE FILM.id_film=$id AND ACTEUR.id_acteur = joue.id_acteur AND FILM.id_film = joue.id_film";
+                $reponse = $bdd->query($req);
+
+                while ($donnees = $reponse->fetch())
+
+                {
+                  ?>
+              <?php echo $donnees['nom']; ?> <?php echo $donnees['prenom']; ?>
+                  <?php
+                  }
+
+                   $reponse->closeCursor();
+                  ?>
+                </h5>
+
+                <!--boucle réalisateurs bdd -->
+
+              <h5>Réalisteurs:<?php
+
+              include('connect_bdd.php');
+
+              $id = $_GET['id'];
+              $req = "SELECT * FROM FILM,REALISATEUR,realiser WHERE FILM.id_film=$id AND REALISATEUR.id_realisteur = realiser.id_realisteur AND FILM.id_film = realiser.id_film";
+              $reponse = $bdd->query($req);
+
+              while ($donnees = $reponse->fetch())
+
+              {
+                ?>
+            <?php echo $donnees['nom']; ?> <?php echo $donnees['prenom']; ?>
+                <?php
+                }
+
+                 $reponse->closeCursor();
+                ?>
+              </h5>
+
+              <?php
+
+              include('connect_bdd.php');
+
+              include('requete2.php');
+
+              $reponse = $bdd->query($req2);
+
+              while ($donnees = $reponse->fetch())
+
+              {
+                ?>
+
           <h5>Date de sortie: <?php echo $donnees['date_de_sortie']; ?></h5>
-          <h5>Genre: <?php echo $donnees['intitule_du_genre']; ?></h5>
+          <!-- fin de la boucle et fin de la requête -->
+          <?php
+          }
+
+           $reponse->closeCursor();
+          ?>
+
+          <!--boucle pour les genres-->
+
+          <h5>Genre:
+          <?php
+
+          include('connect_bdd.php');
+
+          $id = $_GET['id'];
+          $req = "SELECT * FROM FILM,GENRE,appartient WHERE FILM.id_film=$id AND GENRE.id_genre = appartient.id_genre AND FILM.id_film = appartient.id_film";
+          $reponse = $bdd->query($req);
+
+          while ($donnees = $reponse->fetch())
+
+          {
+            ?>
+
+          <?php echo $donnees['intitule_du_genre']; ?>
+
+          <?php
+          }
+
+           $reponse->closeCursor();
+          ?></h5>
+
         </div>
+
+        <!-- boucle pour la video -->
+
+        <?php
+
+        include('connect_bdd.php');
+
+        include('requete2.php');
+
+        $reponse = $bdd->query($req2);
+
+        while ($donnees = $reponse->fetch())
+
+        {
+          ?>
   <?php echo $donnees['bande_annonce'];?>
 </div>
 <!-- fin de la boucle et fin de la requête -->

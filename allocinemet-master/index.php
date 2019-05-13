@@ -26,6 +26,19 @@
     </div>
   </header>
   <main class="container-fluid">
+    <!--pour se connecter à la bdd-->
+    <?php
+
+    include('connect_bdd.php');
+
+    include('requete2.php');
+
+    $reponse = $bdd->query($req2);
+
+    while ($donnees = $reponse->fetch())
+
+    {
+      ?>
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -65,7 +78,12 @@
         <li class="Items Right2"><img src="img/star.jpg"></li>
       </ul>
     </div>
+    <!-- fin de la boucle et fin de la requête -->
+    <?php
+    }
 
+     $reponse->closeCursor();
+    ?>
     <div class="parallax-window" data-parallax="scroll" data-image-src="img/cinem.jpg"></div>
 
     <h5 class="titrecinemet">#ALLOCINE<strong>MET</strong></h5>
