@@ -77,23 +77,14 @@ ul li {
   height: 12em;
 }
 
-.header_film a {
-  font-size: 3em;
+.header_film h1 {
+  font-size: 4em;
   margin-top: auto;
   margin-bottom: auto;
   color: white;
+  text-shadow: 1px 1px 1px black;
 }
 
-.header_film h1 {
-  font-size: 2em;
-}
-
-.header_film h1:hover {
-  transform: scale(1.01);
-  transition: 300ms;
-  border: none;
-  color: white;
-}
 
 /********************************** LISTE FILMS ***********************************/
 
@@ -127,6 +118,10 @@ ul li {
 
 .menu_films a:hover {
   color: #eeb422;
+}
+
+.menu_films li {
+  list-style-type: none;
 }
 
 .menu_films_portable {

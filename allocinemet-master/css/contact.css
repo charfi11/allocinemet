@@ -4,48 +4,76 @@
   box-sizing: 0;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "main_font";
+    font-size: 1.1em;
+    background-color: rgba(0, 0, 0, 0.1);
+}
 
-#Navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 70%;
-    margin: auto;
-  
-  }
-  
-  #link_nav {
-    display: flex;
-    flex-direction: row;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: transparent;
-    border-block-end: solid 1px grey;
-  }
-  
-  #logo {
-    margin-left: 3%;
-    z-index: 100;
-  }
-  
-  #link_nav a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    line-height: 1.4em;
-    border-block-end: solid 1px rgb(255, 255, 255);
-  }
-  
-  #link_nav a:hover {
-    color: grey;
-    transform: scale(1.2);
-    transition: all 0.4s ease-in-out;
-  }
-  
+@font-face{
+	font-family: "main_font";
+ 	src: url('Roboto-Light.ttf');
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url('Roboto-Light.ttf');
+}
+
+main {
+    flex: 1;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: 	#eeb422;
+}
+
+header {
+  display: flex;
+  background-color: #1D1D1D;
+}
+
+header a {
+  color: white;
+  margin-left: 1%;
+}
+
+header a:hover {
+  color: 	#eeb422;
+}
+
+header i:hover {
+  transform: scale(1.1);
+  text-shadow: 1px 1px 1px white;
+}
+
+.entete {
+  display: flex;
+  margin-left: 2%;
+}
+
+.entete a {
+  margin-left: 7%;
+}
+
+ul li {
+  list-style-type: none;
+}
+
   hr {
     width: 100%;
     color: white;
   }
-  
+
   .m-nav-toggle {
     width: 30px;
     height: 23px;
@@ -54,7 +82,7 @@
     align-items: center;
     cursor: pointer;
   }
-  
+
   span.m-toggle-icon,
   span.m-toggle-icon:before,
   span.m-toggle-icon:after {
@@ -65,16 +93,15 @@
     background: #fff;
     position: relative;
   }
-  
+
   span.m-toggle-icon:before {
     top: 10px;
   }
-  
+
   span.m-toggle-icon:after {
     top: -13px;
   }
-  
+
   #Navbar.is-open {
     transform: translateY(0);
   }
-  

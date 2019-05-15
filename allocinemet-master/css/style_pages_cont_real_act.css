@@ -115,13 +115,15 @@ header i:hover {
 
 .titre a h1 {
   font-size: 4em;
+  text-shadow: 1px 1px 1px black;
 }
 
-.titre a:hover {
+.titre h1:hover {
   transform: scale(1.03);
   transition: 300ms;
   border: none;
   color: white;
+  text-shadow: 2px 2px 0px black;
 }
 
 /*------------------------------

@@ -79,7 +79,7 @@
 
                 {
                   ?>
-              <?php echo $donnees['nom']; ?> <?php echo $donnees['prenom']; ?>
+              <?php echo $donnees['nom_acteur']; ?> <?php echo $donnees['prenom_acteur']; ?>
                   <?php
                   }
 
@@ -89,7 +89,7 @@
 
                 <!--boucle réalisateurs bdd -->
 
-              <h5>Réalisteurs:<?php
+              <h5>Réalisateurs:<?php
 
               include('connect_bdd.php');
 
@@ -101,7 +101,7 @@
 
               {
                 ?>
-            <?php echo $donnees['nom']; ?> <?php echo $donnees['prenom']; ?>
+            <?php echo $donnees['nom_realisateur']; ?> <?php echo $donnees['prenom_realisateur']; ?>
                 <?php
                 }
 
@@ -182,13 +182,13 @@
 
   <footer>
     <div class="footer1">
-          <h3><a href="index.html"> ALLOCINE<strong>MET</strong></a></h3>
+          <h3><a href="index.php"> ALLOCINE<strong>MET</strong></a></h3>
           <p>Lorem ipsum dolor sit amet, consectetur ad Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           </div>
             <div class="footer_part2">
-            <p><a href="#">Film 1</a></p>
-            <p><a href="#">Film 2</a></p>
+            <p><a href="content.php?id=1">Film 1</a></p>
+            <p><a href="content.php?id=2">Film 2</a></p>
           </div>
           <div class="footer_part2_1">
           <p><a href="">Lorem Ipsum</a></p>

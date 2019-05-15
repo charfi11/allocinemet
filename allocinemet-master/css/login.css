@@ -1,0 +1,106 @@
+body {
+    font-family: "main_font";
+    font-size: 1.1em;
+    background-color: rgba(000, 0, 0, 0.1);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+@font-face{
+	font-family: "main_font";
+ 	src: url('Roboto-Light.ttf');
+}
+@font-face {
+  font-family: "roboto";
+  src: url('Roboto-Light.ttf');
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: 	#eeb422;
+}
+
+header {
+  display: flex;
+  background-color: #1D1D1D;
+}
+
+header a {
+  color: white;
+  margin-left: 1%;
+}
+
+header a:hover {
+  color: 	#eeb422;
+}
+
+header i:hover {
+  transform: scale(1.1);
+  text-shadow: 1px 1px 1px white;
+}
+
+.entete {
+  display: flex;
+  margin-left: 2%;
+}
+
+.entete a {
+  margin-left: 7%;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.content {
+  background-color: #1D1D1D;
+  height: 20em;
+  width: 20em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+}
+
+input {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #B8E2DC;
+  border-radius: 8%;
+  height: 3em;
+  width: 30%;
+}
+
+#date_de_sortie {
+  height: 5em;
+  width: 20%
+}
+
+input:hover {
+  border-color: #eeb422;
+}
+
+button {
+  border-radius: 8%;
+  border: none;
+  background-color: #516A87;
+  color: white;
+  height: 3em;
+  margin-top: 2%;
+}
+
+button:hover {
+  background-color: #eeb422;
+  transform: scale(1.02);
+}
+
+main {
+  margin-top: 10%;
+}

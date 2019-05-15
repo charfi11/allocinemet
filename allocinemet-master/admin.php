@@ -2,46 +2,93 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Admin</title>
+        <title>Connexion admin</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link href="css/login.css" rel="stylesheet">
     </head>
-
     <body>
-        <div class="container1">
 
+      <header>
+        <a href="index.php">
+          ALLOCINE<strong>MET</strong>
+        </a>
+        <div class="entete">
+          <a href="allo_films.php">FILMS </a>
+          <a href="contact.html">CONTACT </a>
+          <a href="#">connexion/inscription</a>
+          <a href="#"><i class="fas fa-users"></i></a>
         </div>
-            <h1>ADMIN</h1>
+      </header>
+
+      <form action="admin.php" method="post">
+        <h3>Veuillez entrez le mot de passe:</h3>
+          <input type="password" name="mot_de_passe" />
+          <button>Se connecter</button>
+      </form>
+
+        <?php
+    if (isset($_POST['mot_de_passe']) AND $_POST['mot_de_passe'] ==  "pioupiou") // Si le mot de passe est bon
+    {
+    // On affiche la page admin
+    ?>
+    <div class="container1">
+
+    </div>
+        <h2>ADMIN</h2>
+
+    <h3 class="description">Permet d'ajouter les informations dans la bdd.</h3>
 
 
-        <p class="description">Admin vous permet d'ajouter un nouveau Film.</p>
+    <form action="admin.php" method="post" id="formulaire">
+        <label for="TITRE">TITRE</label> : <input type="text" name="titre" id="titre"  /><br />
+        <label for="RESUME">RESUME</label> :  <input type="text" name="resume" id="resume" /><br />
+        <label for="AFFICHE">AFFICHE</label> :  <input type="text" name="affiche" id="affiche" /><br />
+        <label for="bande_annonce">bande_annonce</label> :  <input type="text" name="bande_annonce" id="bande_annonce" /><br />
+        <label for="DATE_DE_SORTIE">DATE_DE_SORTIE</label> : <input type="date" name="date_de_sortie" id="date_de_sortie"  /><br />
 
+        <label for="nom_acteur">NOM_ACTEUR</label> : <input type="text" name="nom_acteur" id="nom_acteur"  /><br />
+        <label for="prenom_acteur">PRENOM_ACTEUR</label> :  <input type="text" name="prenom_acteur" id="prenom_acteur" /><br />
 
-        <form action="admin.php" method="post" id="formulaire">
-            <p>
-            <label for="TITRE">TITRE</label> : <input type="text" name="TITRE" id="TITRE"  /><br />
+        <label for="nom_realisateur">NOM_REALISATEUR</label> : <input type="text" name="nom_realisateur" id="nom_realisateur"  /><br />
+        <label for="prenom_realisateur">PRENOM_REALISATEUR</label> :  <input type="text" name="prenom_realisateur" id="prenom_realisateur" /><br />
 
-            <label for="DATE_DE_SORTIE">DATE_DE_SORTIE</label> : <input type="date" name="DATE_DE_SORTIE" id="DATE_DE_SORTIE"  /><br />
-            <label for="AFFICHE">AFFICHE</label> :  <input type="text" name="AFFICHE" id="AFFICHE" /><br />
-            <label for="GENRE">GENRE</label> :  <input type="text" name="GENRE" id="GENRE" /><br />
-            <label for="RESUME">RESUME</label> :  <input type="text" name="RESUME" id="RESUME" /><br />
-            <input type="submit" value="Envoyer" />
-        </p>
-        </form>
+        <label for="GENRE">GENRE</label> : <input type="text" name="intitule_du_genre" id="intitule_du_genre"  /><br />
+        <input type="submit" value="Envoyer" />
+    </form>
 
-<?php
+        <?php
+    }
+    ?>
+    <?php
 
-try
-{
-    $bdd = new PDO('mysql:host=localhost;dbname=FILM;charset=utf8', 'charfi11', 'pioupiou');
-}
-catch(Exception $e)
-{
-        die('Erreur : '.$e->getMessage());
-}
+    include('connect_bdd.php');
 
-// Insertion du message à l'aide d'une requête préparée
-$req = $bdd->prepare('INSERT INTO FILM (TITRE, DATE_DE_SORTIE, GENRE, AFFICHE, RESUME, BANDE_ANNONCE) VALUES(?, ?, ?, ?,?, ?)');
-$req->execute(array($_POST['TITRE'], $_POST['DATE_DE_SORTIE'], $_POST['GENRE'], $_POST['AFFICHE'], $_POST['RESUME'], $_POST['BANDE_ANNONCE']));
+    $req = $bdd->prepare('INSERT INTO FILM(titre, resume, affiche, bande_annonce, date_de_sortie) VALUES(?, ?, ?, ?, ?)');
+    $req->execute(array(
+    $_POST['titre'],
+    $_POST['resume'],
+    $_POST['affiche'],
+    $_POST['bande_annonce'],
+    $_POST['date_de_sortie'],
+    ));
 
-?>
+    $req = $bdd->prepare('INSERT INTO ACTEUR(nom_acteur, prenom_acteur) VALUES(?, ?)');
+    $req->execute(array(
+    $_POST['nom_acteur'],
+    $_POST['prenom_acteur'],
+    ));
+
+    $req = $bdd->prepare('INSERT INTO GENRE(intitule_du_genre) VALUES(?)');
+    $req->execute(array(
+    $_POST['intitule_du_genre'],
+    ));
+
+    $req = $bdd->prepare('INSERT INTO REALISATEUR(nom_realisateur, prenom_realisateur) VALUES(?, ?)');
+    $req->execute(array(
+      $_POST['nom_realisateur'],
+      $_POST['prenom_realisateur'],
+      ));
+    ?>
+
     </body>
 </html>

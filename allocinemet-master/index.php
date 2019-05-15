@@ -15,7 +15,7 @@
 
 <body>
   <header>
-    <a href="index.html">
+    <a href="index.php">
       <h1>ALLOCINE<strong>MET</strong></h1>
     </a>
     <div class="entete">
@@ -26,19 +26,6 @@
     </div>
   </header>
   <main class="container-fluid">
-    <!--pour se connecter à la bdd-->
-    <?php
-
-    include('connect_bdd.php');
-
-    include('requete2.php');
-
-    $reponse = $bdd->query($req2);
-
-    while ($donnees = $reponse->fetch())
-
-    {
-      ?>
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -71,19 +58,14 @@
       <h5 class="affiche_container">A L' AFFICHE</h5>
       <hr>
       <ul class="Carousel2">
-        <li class="Items Front"><img src="img/endmar.jpg"></a></li>
+        <li class="Items Front"><img src="img/endmar.jpg"></li>
         <li class="Items Left"><img src="img/capmar.jpeg"></li>
         <li class="Items Left2"><img src="img/gard.jpg"></li>
         <li class="Items Right"><img src="img/js.jpg"></li>
         <li class="Items Right2"><img src="img/star.jpg"></li>
       </ul>
     </div>
-    <!-- fin de la boucle et fin de la requête -->
-    <?php
-    }
 
-     $reponse->closeCursor();
-    ?>
     <div class="parallax-window" data-parallax="scroll" data-image-src="img/cinem.jpg"></div>
 
     <h5 class="titrecinemet">#ALLOCINE<strong>MET</strong></h5>
@@ -104,8 +86,8 @@
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
     <div class="footer_part2">
-      <p><a href="#">Film 1</a></p>
-      <p><a href="#">Film 2</a></p>
+      <p><a href="content.php?id=1">Film 1</a></p>
+      <p><a href="content.php?id=2">Film 2</a></p>
     </div>
     <div class="footer_part2_1">
       <p><a href="">Lorem Ipsum</a></p>
@@ -144,25 +126,25 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script>
-    $(function() {
-      var front = $('.Front'),
-        others = ['Left2', 'Left', 'Right', 'Right2'];
-
-      $('.Carousel2').on('click', '.Items', function() {
-        var $this = $(this);
-
-        $.each(others, function(i, cl) {
-          if ($this.hasClass(cl)) {
-            front.removeClass('Front').addClass(cl);
-            front = $this;
-            front.addClass('Front').removeClass(cl);
-          }
-        });
-      });
-    });
-  </script>
   <script src="java/parallax.min.js"></script>
+  <script>
+  $(function(){
+  var front = $('.Front'),
+      others = ['Left2', 'Left', 'Right', 'Right2'];
+
+  $('.Carousel2').on('click', '.Items', function() {
+    var $this = $(this);
+
+    $.each(others, function(i, cl) {
+      if ($this.hasClass(cl)) {
+        front.removeClass('Front').addClass(cl);
+        front = $this;
+        front.addClass('Front').removeClass(cl);
+      }
+    });
+  });
+});
+</script>
 </body>
 
 </html>

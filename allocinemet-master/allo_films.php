@@ -31,7 +31,36 @@
   <!--//////////////////////////////  HEADER  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
   <div class="header_film">
-    <a href="allo_films.php"><h1>NOS FILMS</h1></a>
+    <?php
+
+    include('connect_bdd.php');
+
+    include('requete2.php');
+
+    if(isset($_GET['id']))
+    {
+
+    $reponse = $bdd->query($req4);
+
+    $reponse->execute();
+
+while ($donnees = $reponse->fetch())
+
+{
+  ?>
+   <h1><?php echo $donnees['intitule_du_genre'];?></h1>
+    <?php
+  }
+     $reponse->closeCursor();
+    ?>
+      <?php
+  }
+    else
+    {
+      echo "<h1>NOS FILMS</h1>";
+    }
+      ?>
+
   </div>
 
   <!--//////////////////////////////  LISTE GAUCHE  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
@@ -41,15 +70,28 @@
           <input type="search" id="site-search" name="q" aria-label="Search through site content">
            <a href="#"><i class="fas fa-search"></i></a>
          </div>
-           <a href="#" class="collapsible">Action</a>
-           <a href="#" class="collapsible">Science-fiction</a>
-           <a href="#" class="collapsible">Comédie</a>
-           <a href="#" class="collapsible">Drame</a>
-           <a href="#" class="collapsible">Animation</a>
-           <a href="#" class="collapsible">Horreur</a>
+         <?php
+
+         include('connect_bdd.php');
+
+         include('requete2.php');
+
+         $reponse = $bdd->query($req3);
+
+         while ($donnees = $reponse->fetch())
+
+         {
+           ?>
+           <li><a href="allo_films.php?id=<?php echo $donnees['id_genre'];?>" class="collapsible"><?php echo $donnees['intitule_du_genre']; ?></a>
+                    </li>
+           <?php
+           }
+
+            $reponse->closeCursor();
+           ?>
       </div>
 
-      <!--//////////////////////////////  LISTE GAUCHE POUR SMARTPHONE  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+      <!--//////////////////////////////  LISTE GAUCHE POUR SMARTPHONE  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-
 
       <div class="menu_films_portable">
         <ul id="menu-accordeon">
@@ -78,7 +120,7 @@
             </ul>
           </li>
         </ul>
-      </div>
+      </div>-->
 
 
     <!--//////////////////////////////  MINIATURES FILMS DROITE  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
@@ -90,7 +132,17 @@
 
         include('requete2.php');
 
-        $reponse = $bdd->query($req);
+        if(isset($_GET['id']))
+        {
+              $reponse = $bdd->query('SELECT affiche, titre, FILM.id_film FROM FILM, appartient, GENRE WHERE FILM.id_film= appartient.id_film AND appartient.id_genre= GENRE.id_genre AND GENRE.id_genre=' .$_GET['id']);
+
+                      }
+                      else
+
+                      {
+                            $reponse = $bdd->query($req);
+                      }
+      $reponse->execute();
 
         while ($donnees = $reponse->fetch())
 
@@ -99,7 +151,7 @@
         <a href="content.php?id=<?php echo $donnees['id_film'];?>"><img class="effect " src="<?php echo $donnees['affiche'];?>" style="height: 100%; width: 100%;">
         </a>
         <?php
-        }
+      }
 
          $reponse->closeCursor();
         ?>
@@ -135,8 +187,8 @@ window.addEventListener(function(e) {
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           </div>
             <div class="footer_part2">
-            <p><a href="#">Film 1</a></p>
-            <p><a href="#">Film 2</a></p>
+            <p><a href="content.php?id=1">Film 1</a></p>
+            <p><a href="content.php?id=2">Film 2</a></p>
           </div>
           <div class="footer_part2_1">
           <p><a href="">Lorem Ipsum</a></p>
