@@ -134,7 +134,7 @@ while ($donnees = $reponse->fetch())
 
         if(isset($_GET['id']))
         {
-              $reponse = $bdd->query('SELECT affiche, titre, FILM.id_film FROM FILM, appartient, GENRE WHERE FILM.id_film= appartient.id_film AND appartient.id_genre= GENRE.id_genre AND GENRE.id_genre=' .$_GET['id']);
+              $reponse = $bdd->prepare($req5);
 
                       }
                       else
@@ -148,7 +148,7 @@ while ($donnees = $reponse->fetch())
 
         {
           ?>
-        <a href="content.php?id=<?php echo $donnees['id_film'];?>"><img class="effect " src="<?php echo $donnees['affiche'];?>" style="height: 100%; width: 100%;">
+        <a class="content_img" href="content.php?id=<?php echo $donnees['id_film'];?>"><img class="effect" src="<?php echo $donnees['affiche'];?>" style="height: 100%; width: 100%;">
         </a>
         <?php
       }

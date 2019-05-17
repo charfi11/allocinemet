@@ -22,7 +22,7 @@ footer {
 
   footer a:hover {
     transition: 150ms;
-    color:	#eeb422;
+    color: #eeb422;
     text-shadow: 1px 2px 5px black;
   }
 

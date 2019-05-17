@@ -14,7 +14,7 @@
         </a>
         <div class="entete">
           <a href="allo_films.php">FILMS </a>
-          <a href="contact.html">CONTACT </a>
+          <a href="contact.php">CONTACT </a>
           <a href="#">connexion/inscription</a>
           <a href="#"><i class="fas fa-users"></i></a>
         </div>
@@ -48,14 +48,16 @@
 
         <label for="nom_acteur">NOM_ACTEUR</label> : <input type="text" name="nom_acteur" id="nom_acteur"  /><br />
         <label for="prenom_acteur">PRENOM_ACTEUR</label> :  <input type="text" name="prenom_acteur" id="prenom_acteur" /><br />
-
+        <label for="GENRE">GENRE</label> : <input type="text" name="intitule_du_genre" id="intitule_du_genre"  /><br />
         <label for="nom_realisateur">NOM_REALISATEUR</label> : <input type="text" name="nom_realisateur" id="nom_realisateur"  /><br />
         <label for="prenom_realisateur">PRENOM_REALISATEUR</label> :  <input type="text" name="prenom_realisateur" id="prenom_realisateur" /><br />
-
-        <label for="GENRE">GENRE</label> : <input type="text" name="intitule_du_genre" id="intitule_du_genre"  /><br />
-        <input type="submit" value="Envoyer" />
-    </form>
-
+        <button type="submit">Valider</button>
+</form>
+        <form action="suppression.php" method="post" id="formulaire">
+        <h3>Supprimer un Film:</h3>
+            <label for="FILM">FILM</label> : <input type="text" name="id_film" id="id_film"  />
+    <button type="submit" name="erase" />Valider</button>
+</form>
         <?php
     }
     ?>

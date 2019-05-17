@@ -33,7 +33,7 @@
       </a>
       <div class="entete">
         <a href="allo_films.php">FILMS </a>
-        <a href="contact.html">CONTACT </a>
+        <a href="contact.php">CONTACT </a>
         <a href="#">connexion/inscription</a>
         <a href="#"><i class="fas fa-users"></i></a>
       </div>
@@ -47,7 +47,7 @@
 
     <!-- pour l'image du film -->
 
-    <div class="affiche"><a href="#"><img src="<?php echo $donnees['affiche'];?>" style="height: 90%; width: 80%;"/></a><!-- intégration de l'image via la bdd -->
+    <div class="affiche"><a href="#"><img src="<?php echo $donnees['affiche'];?>" style="height: 90%; width: 100%;"/></a><!-- intégration de l'image via la bdd -->
     </div>
     <!-- pour la description du film -->
     <div class="resume">
@@ -170,7 +170,7 @@
 
         {
           ?>
-  <?php echo $donnees['bande_annonce'];?>
+  <div class="iframe"><?php echo $donnees['bande_annonce'];?></div>
 </div>
 <!-- fin de la boucle et fin de la requête -->
 <?php

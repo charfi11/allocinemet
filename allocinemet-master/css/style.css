@@ -96,7 +96,7 @@ header i:hover {
 .imgcinemet {
   height: 100%;
   width: 80%;
-  box-shadow: -1px 2px 8px 2px rgba(0, 0, 0, 0.6);
+  filter: contrast(50%);
 }
 
 .contain a {
@@ -107,5 +107,5 @@ header i:hover {
   transition: 300ms;
   box-shadow: 0px 0px 0px 0px;
   transform: scale(1.01);
-  filter: contrast(50%);
+  filter: contrast(100%);
 }
